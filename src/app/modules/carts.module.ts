@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CART_PROVIDERS , CART_DECLARATIONS } from './../components/cart-list';
 
@@ -11,7 +11,7 @@ import { CART_PROVIDERS , CART_DECLARATIONS } from './../components/cart-list';
   exports: [ CART_DECLARATIONS ], // to use outside of this module
   providers: [ CART_PROVIDERS ],
   bootstrap: [],
-  schemas: [ /* or NO_ERRORS_SCHEMA  */ ]
+  schemas: [  NO_ERRORS_SCHEMA /*or CUSTOM_ELEMENTS_SCHEMA*/  ]
 })
 export class CartModule { }
 

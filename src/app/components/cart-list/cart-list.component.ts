@@ -1,6 +1,6 @@
 import { Component, OnInit , EventEmitter, Input, Output } from '@angular/core';
 import { VisitorCart } from './../../model/cart.model';
-// import { CartService } from './../../services/cart.service';
+import { CartService } from './../../services/cart.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -16,23 +16,25 @@ export class CartListComponent implements OnInit {
   // carts: Array<VisitorCart>;
   // cartService: CartService;
 
-  constructor(/*cartService: CartService*/) {
+  constructor(private cartService: CartService) {
     this.complete = new EventEmitter();
     // this.cartService = cartService;
     console.log('constructor fin' );
   }
 
-
   ngOnInit() {
+
     /*this.cart = this.cartService.getCart();
-    this.carts = this.cartService.getCarts();
+
     console.log('list inited',this.cart);
     console.log('this.carts',this.carts);*/
   }
 
   onCompleteTask(cart: VisitorCart): void {
-    console.log('task-list component, completeTask method', cart);
+    console.log('\t parent listen completeTask method' , '');
     this.complete.emit(cart);
+
+    console.log('\t do some after parent sent to gradParent');
   }
 
 }

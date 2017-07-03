@@ -1,5 +1,7 @@
 <hr>
-<p>carts : {{carts}}</p>
+<p>
+  Visitor Cart - list top works!
+</p>
 <ul class="list-group">
   <li *ngFor="let it of carts" class="list-group-item">
     <ul>
@@ -12,14 +14,12 @@
   </li>
 </ul>
 
-<button class="btn btn-primary" (click)="completeTask($event)" >Done</button>
+<!--<button class="btn btn-primary" (click)="completeTask($event)" >Done</button>-->
 
-<p>
-  Visitor Cart - list works!
-</p>
 
-<!--<app-cart
+
+<app-cart
   *ngFor="let cart of carts"
   [cart]="cart"
   (complete)="onCompleteTask($event)">
-</app-cart>-->
+</app-cart>

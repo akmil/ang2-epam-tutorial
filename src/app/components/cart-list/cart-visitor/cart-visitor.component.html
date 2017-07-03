@@ -1,18 +1,20 @@
-<p>
-  current Visitor Cart
-</p>
+<h4 class="text-info">
+  chield current Visitor Cart
+</h4>
 
-<p>carts : {{cart.toString()}}</p>
-<ul class="list-group">
-  <li *ngFor="let it of carts" class="list-group-item">
-    <ul>
-      <li class="list-inline">id: {{it.id}}</li>
-      <li class="list-inline">resort: {{it.resort}} , price <b>{{it.price}}</b></li>
-      <li class="list-inline">dateStart: {{it.dateStart}}</li>
-      <li class="list-inline">dateEnd: {{it.dateEnd}}</li>
-      <li class="list-inline">powder: {{it.powder}}</li>
-    </ul>
-  </li>
+<ul>
+  <li class="list-inline">id: {{cart.id}}</li>
+  <li class="list-inline">resort: {{cart.resort}} , price <b>{{cart.price}}</b></li>
+  <li class="list-inline">dateStart: {{cart.dateStart}}</li>
+  <li class="list-inline">dateEnd: {{cart.dateEnd}}</li>
+  <li class="list-inline">powder: {{cart.powder}}</li>
 </ul>
 
-<button class="btn btn-primary" (click)="completeTask($event)" >Done</button>
+<!--<p>cart : {{cart}}</p>
+<ul class="list-group">
+  <li *ngFor="let it of carts" class="list-group-item">
+
+  </li>
+</ul>-->
+
+<button class="btn btn-primary" (click)="completeTask($event)" >Done Inner</button>

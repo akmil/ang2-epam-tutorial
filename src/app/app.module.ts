@@ -3,7 +3,7 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 
 import { AppComponent } from './app.component';
 
-import { ListModule } from './components/01-display-data/list.module';
+// import { ListModule } from './components/01-display-data/list.module';
 /*import { CommunicationModule } from './components/02-communication/communication.module';
 import { HostModule } from './components/03-host/host.module';
 import { ProjectionModule } from './components/04-projection/projection.module';
@@ -22,8 +22,8 @@ import { CartModule } from './modules/carts.module';
   ],
   imports: [
     BrowserModule,
-    CartModule,
-    ListModule
+    CartModule
+
   ],
   exports: [],
   providers: [],

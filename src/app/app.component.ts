@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { Task } from './components/02-communication/01-parent-child-communication/models/task.model';
-// import { TasksService } from './components/02-communication/01-parent-child-communication/';
+import { VisitorCart } from './model/cart.model';
+import { CartService } from './services/cart.service';
 
 
 @Component({
@@ -12,21 +12,25 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   // // Task Demo
   // task: Task;
-  // tasks: Array<Task>;
+  carts: Array<VisitorCart>;
   //
-  // constructor(
-  //   // public tasksService: TasksService
-  // ) { }
+  constructor(
+    public cartService: CartService
+  ) { }
   //
   ngOnInit() {
+    this.carts = this.cartService.getCarts();
+    this.carts.forEach((item,idx)=>{
+      item.resort =  item.resort + '__parentDataModify__' + item.id;
+    });
     // this.task = this.tasksService.getTask();
     // this.tasks = this.tasksService.getTasks();
   }
   //
-  // onCompleteTask(task: Task): void {
-  //   console.log('app component, onCompleteTask method', task);
-  //   task.done = true;
-  // }
+  onCompleteTask(cart: VisitorCart): void {
+    console.log('\t \t gradParent component, fo some');
+    cart.powder = !cart.powder;
+  }
   //
   // onAddTask(task: Task): void {
   //   console.log('app component, onAddTask method', task);
